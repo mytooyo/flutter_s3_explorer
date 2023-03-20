@@ -249,6 +249,12 @@ impl NewWithNullPtr for wire_AWSProfile {
     }
 }
 
+impl Default for wire_AWSProfile {
+    fn default() -> Self {
+        Self::new_with_null_ptr()
+    }
+}
+
 impl NewWithNullPtr for wire_S3Bucket {
     fn new_with_null_ptr() -> Self {
         Self {
@@ -259,12 +265,24 @@ impl NewWithNullPtr for wire_S3Bucket {
     }
 }
 
+impl Default for wire_S3Bucket {
+    fn default() -> Self {
+        Self::new_with_null_ptr()
+    }
+}
+
 impl NewWithNullPtr for wire_S3GetObjectConfig {
     fn new_with_null_ptr() -> Self {
         Self {
             save_dir: core::ptr::null_mut(),
             zip_for_folder: Default::default(),
         }
+    }
+}
+
+impl Default for wire_S3GetObjectConfig {
+    fn default() -> Self {
+        Self::new_with_null_ptr()
     }
 }
 
